@@ -10,31 +10,34 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (this.classList.contains('active')) return;
 
-            // 1. Reset: Instantly move overlay back to the left start
+            // 1. INSTANT RESET: Snap back to start off-screen
             overlay.style.transition = 'none';
             overlay.classList.remove('active', 'exit');
-            overlay.style.left = '-100%';
+            
+            // Force the browser to recognize the reset (Reflow)
+            void overlay.offsetWidth; 
 
-            // Smallest possible delay to let the reset "stick"
+            // 2. TRIGGER WIPE: Small delay ensures the reset "sticks"
             setTimeout(() => {
-                // 2. Start the Wipe
-                overlay.style.transition = 'left 0.5s ease-in-out';
+                overlay.style.transition = 'transform 0.5s ease-in-out';
                 overlay.classList.add('active');
 
-                // 3. Swap content while screen is orange
+                // 3. SWITCH CONTENT: Swap when screen is orange
                 setTimeout(() => {
                     navLinks.forEach(l => l.classList.remove('active'));
                     sections.forEach(s => s.classList.remove('active'));
                     
                     this.classList.add('active');
-                    document.getElementById(targetId).classList.add('active');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) targetSection.classList.add('active');
+                    
                     window.scrollTo(0, 0);
 
-                    // 4. Wipe off to the right
+                    // 4. FINISH: Slide orange away to the right
                     overlay.classList.remove('active');
                     overlay.classList.add('exit');
                 }, 500); 
-            }, 10); 
+            }, 20); 
         });
     });
 });
