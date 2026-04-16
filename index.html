@@ -8,24 +8,24 @@
 </head>
 <body>
     
-    <!-- NEW: Navigation Panel -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">zurikamili.</a>
-            <ul class="nav-links">
-                <li><a href="#about">about</a></li>
-                <li><a href="#commissions">commissions</a></li>
-                <li><a href="#interests">interests</a></li>
-                <!-- Add more links if you have more sections -->
-            </ul>
+    <!-- Fixed Header / Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">zurikamili.</div>
+            <nav class="nav">
+                <a href="#" data-section="about" class="nav-link active">about</a>
+                <a href="#" data-section="commissions" class="nav-link">commissions</a>
+                <a href="#" data-section="interests" class="nav-link">interests</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <main>
-        <!-- Section 1: Home / About Me -->
-        <section id="home" class="section">
+    <!-- Content Sections (only one shows at a time) -->
+    <main class="main-content">
+
+        <!-- About Section -->
+        <section id="about" class="section active">
             <div class="container">
-                <h1>zurikamili.</h1>
                 <h2>a. about me</h2>
                 <p class="bio">zuri ✣ kenyan/american</p>
                 <p class="bio">i make commentary content, but im an editor and artist first</p>
@@ -45,20 +45,49 @@
             </div>
         </section>
 
-        <!-- Example: Add more sections like this -->
+        <!-- Commissions Section -->
         <section id="commissions" class="section">
             <div class="container">
-                <h2>commissions</h2>
-                <p>Put your commission info here...</p>
+                <h2>b. commissions</h2>
+                <p class="bio"><strong>status</strong> ✣ open!</p>
+                <p class="bio">commission page ✣ if you want to commission me <a href="#" target="_blank">click here</a></p>
+                <!-- Add more commission details here later -->
             </div>
         </section>
 
+        <!-- Interests Section -->
         <section id="interests" class="section">
             <div class="container">
-                <h2>interests</h2>
-                <p>Put your interests or other content here...</p>
+                <h2>c. interests</h2>
+                <p class="bio"><strong>content creation</strong> ✣ writing, drawing, editing, videos etc.</p>
+                <p class="bio">i am currently making a story of my characters!</p>
+                <div class="find-me">
+                    <p>playlists → <a href="https://www.youtube.com/@zurikamili" target="_blank">main youtube</a></p>
+                </div>
             </div>
         </section>
+
     </main>
+
+    <script>
+        // Simple JavaScript to switch sections
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active from all links and sections
+                navLinks.forEach(l => l.classList.remove('active'));
+                sections.forEach(s => s.classList.remove('active'));
+                
+                // Add active to clicked link and matching section
+                this.classList.add('active');
+                const sectionId = this.getAttribute('data-section');
+                document.getElementById(sectionId).classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
