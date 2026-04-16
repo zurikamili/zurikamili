@@ -15,12 +15,27 @@ body {
 
 /* this would be the image */
 .portfolio-image {
-    max-width: 100%; /* Ensures the image doesn't exceed its container */
-    height: auto;    /* Maintains original aspect ratio */
-    display: block;  /* Removes unwanted spacing at the bottom */
-    margin: 20px auto; /* Centers the image with some breathing room */
-    border-radius: 8px; /* Optional: adds a soft look typical of modern portfolios */
-  }
+    width: 150px;           /* Control the size */
+    height: 150px;
+    object-fit: cover;      /* Prevents stretching */
+    border-radius: 50%;     /* Makes it a circular profile pic, or 12px for soft corners */
+    border: 2px solid #eee; /* Optional: adds a subtle frame */
+    margin-bottom: 20px;
+    display: block;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centers everything for a clean look */
+    text-align: center;
+}
+
+.bio {
+    line-height: 1.6;       /* Adds breathing room between lines */
+    opacity: 0.8;           /* Makes the bio look more stylized/minimal */
+}
+
 
 /* Fixed Header */
 .header {
