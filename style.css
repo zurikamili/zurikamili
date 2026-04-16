@@ -21,7 +21,7 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    border-bottom: 1px solid #a855f7;
+    border-bottom: 1px solid #ef621d;
 }
 
 .header-container {
@@ -53,7 +53,7 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-    color: #a855f7;
+    color: #ef621d;
 }
 
 /* Main Content Area */
@@ -84,7 +84,7 @@ body {
 h2 {
     font-size: 1.35rem;
     font-weight: 400;
-    color: #a855f7;
+    color: #ef621d;
     margin-bottom: 35px;
     letter-spacing: 1px;
 }
@@ -99,7 +99,7 @@ h2 {
 .find-me p {
     font-size: 1.15rem;
     margin-bottom: 18px;
-    color: #a855f7;
+    color: #ef621d;
 }
 
 .links {
@@ -117,11 +117,11 @@ h2 {
 }
 
 .links a:hover {
-    color: #a855f7;
+    color: #ef621d;
 }
 
 .separator {
-    color: #a855f7;
+    color: #ef621d;
     font-size: 1.35rem;
 }
 
@@ -147,7 +147,7 @@ h2 {
 }
 
 .commission-form h3 {
-    color: #a855f7;
+    color: #ef621d;
     margin-bottom: 25px;
     font-size: 1.4rem;
     text-align: center;
@@ -180,12 +180,12 @@ h2 {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    border-color: #a855f7;
+    border-color: #ef621d;
     outline: none;
 }
 
 .submit-btn {
-    background-color: #a855f7;
+    background-color: #ef621d;
     color: #ffffff;
     border: none;
     padding: 14px 32px;
