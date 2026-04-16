@@ -3,34 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zuri Kamili</title>
+    <title>zurikamili.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #a855f7;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .bio {
+            font-size: 1.35rem;
+            margin-bottom: 18px;
+            opacity: 0.95;
+        }
+
+        .find-me p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #a855f7;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 1.25rem;
+        }
+
+        .links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #a855f7;
+            text-decoration: underline;
+        }
+
+        .separator {
+            color: #a855f7;
+            font-size: 1.3rem;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            .bio {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-    <section class="hero">
-        <h1>Zuri Kamili</h1>
-        <p>artist and editor ♡</p>
-    </section>
-
-    <section class="about">
-        <h2>about</h2>
-        <p>some text here</p>
-    </section>
-
-    <section class="links card">
-        <h2>links</h2>
-        <p>my socials and projects</p>
-        <a href="https://www.instagram.com/zurikamili">instagram</a> <a href="https://www.x.com/zurikamili">twitter</a> <a href="https://www.zurikamili.carrd.co">carrd</a>
-    </section>
-
-    <section class="contact">
-        <h2>contact</h2>
-        <p>email me or follow my socials</p>
-    </section>
-
+    <main>
+        <div class="container">
+            <h1>zurikamili.</h1>
+            <h2>a. about me</h2>
+            <p class="bio">zuri ✣ kenyan/american</p>
+            <p class="bio">i make commentary content, but im an editor and artist first</p>
+            
+            <div class="find-me">
+                <p>find me →</p>
+                <div class="links">
+                    <a href="https://x.com/zurikamili" target="_blank">twitter</a>
+                    <span class="separator">✣</span>
+                    <a href="https://www.instagram.com/zurikamili/" target="_blank">instagram</a>
+                    <span class="separator">✣</span>
+                    <a href="https://www.tiktok.com/@zurikamili.com" target="_blank">tiktok</a>
+                    <span class="separator">✣</span>
+                    <a href="https://www.youtube.com/@zurikamili" target="_blank">youtube</a>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
