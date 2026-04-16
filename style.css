@@ -252,3 +252,53 @@ h2 {
 .transition-overlay.exit {
     transform: translateX(100%);
 }
+
+/* Story Reader Styling */
+.story-reader {
+    margin: 30px 0;
+    text-align: left; /* Better for reading long text */
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #444;
+}
+
+.chapter-nav {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ef621d;
+    padding-bottom: 10px;
+}
+
+.chapter-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.chapter-btn.active {
+    color: #ef621d;
+    font-weight: bold;
+}
+
+/* Hide chapters by default */
+.chapter-content {
+    display: none;
+}
+
+/* Show only the active chapter */
+.chapter-content.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
