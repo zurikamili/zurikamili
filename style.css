@@ -230,24 +230,26 @@ h2 {
     opacity: 0.75;
     text-align: center;
 }
+
 .transition-overlay {
     position: fixed;
     top: 0;
-    left: -100%; /* Start off-screen to the left */
+    left: -100%;       /* Starts hidden on the left */
     width: 100%;
     height: 100%;
     background-color: #ef621d; /* Your signature orange */
-    z-index: 9999; /* Stay above everything else */
+    z-index: 9999;     /* Above all other content */
+    pointer-events: none;
     transition: left 0.5s ease-in-out;
-    pointer-events: none; /* Allows clicks to pass through when not animating */
 }
 
-/* This class triggers the wipe */
+/* Covers the whole screen */
 .transition-overlay.active {
     left: 0;
 }
 
-/* This class moves it off-screen to the right after the "wipe" */
+/* Exits to the right after the content switch */
 .transition-overlay.exit {
     left: 100%;
 }
+
