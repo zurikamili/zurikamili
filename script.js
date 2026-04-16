@@ -8,36 +8,33 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = this.getAttribute('data-section');
             
-            // If already on this section, don't trigger the wipe
             if (this.classList.contains('active')) return;
 
-            // 1. Reset overlay to start position WITHOUT a transition
+            // 1. Reset: Instantly move overlay back to the left start
             overlay.style.transition = 'none';
-            overlay.classList.remove('exit', 'active');
+            overlay.classList.remove('active', 'exit');
             overlay.style.left = '-100%';
 
-            // Use a tiny delay (force reflow) so the browser notices the reset
-            // This is the "secret" to making it work every time
-            void overlay.offsetWidth; 
-
-            // 2. Start Wipe ON (0.5s)
-            overlay.style.transition = 'left 0.5s ease-in-out';
-            overlay.classList.add('active');
-
-            // 3. Switch content behind the orange screen
+            // Smallest possible delay to let the reset "stick"
             setTimeout(() => {
-                navLinks.forEach(l => l.classList.remove('active'));
-                sections.forEach(s => s.classList.remove('active'));
-                
-                this.classList.add('active');
-                document.getElementById(targetId).classList.add('active');
-                window.scrollTo(0, 0);
+                // 2. Start the Wipe
+                overlay.style.transition = 'left 0.5s ease-in-out';
+                overlay.classList.add('active');
 
-                // 4. Wipe OFF to the right
-                overlay.classList.remove('active');
-                overlay.classList.add('exit');
+                // 3. Swap content while screen is orange
+                setTimeout(() => {
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+                    
+                    this.classList.add('active');
+                    document.getElementById(targetId).classList.add('active');
+                    window.scrollTo(0, 0);
 
-            }, 500); 
+                    // 4. Wipe off to the right
+                    overlay.classList.remove('active');
+                    overlay.classList.add('exit');
+                }, 500); 
+            }, 10); 
         });
     });
 });
