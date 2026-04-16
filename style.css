@@ -1,26 +1,25 @@
-h1 {
-    font-size: 72px;
-    font-weight: 700;
-    letter-spacing: -2px;
-}
-
 body {
-    background: #111111;
+    background: #111;
     color: white;
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-background: #161616;
-color: #f8f8f8;
-accent: #d8b4fe;
+section {
+    padding: 80px;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .card {
     background: rgba(255,255,255,0.05);
     border-radius: 24px;
     padding: 40px;
-    backdrop-filter: blur(10px);
-}
-
-html {
-    scroll-behavior: smooth;
+    margin: 40px;
 }
