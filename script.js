@@ -41,3 +41,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Story Reader Logic
+const chapterBtns = document.querySelectorAll('.chapter-btn');
+const chapterContents = document.querySelectorAll('.chapter-content');
+
+chapterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const targetChapter = btn.getAttribute('data-chapter');
+
+        // Remove active class from all buttons and contents
+        chapterBtns.forEach(b => b.classList.remove('active'));
+        chapterContents.forEach(c => c.classList.remove('active'));
+
+        // Add active class to clicked button and target content
+        btn.classList.add('active');
+        document.getElementById(targetChapter).classList.add('active');
+    });
+});
