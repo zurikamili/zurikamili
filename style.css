@@ -3,3 +3,13 @@ h1 {
     font-weight: 700;
     letter-spacing: -2px;
 }
+
+body {
+    background: #111111;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+background: #161616;
+color: #f8f8f8;
+accent: #d8b4fe;
