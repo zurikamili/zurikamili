@@ -231,25 +231,25 @@ h2 {
     text-align: center;
 }
 
+/* Base state: Hidden on the left */
 .transition-overlay {
     position: fixed;
     top: 0;
-    left: -100%;       /* Starts hidden on the left */
-    width: 100%;
-    height: 100%;
-    background-color: #ef621d; /* Your signature orange */
-    z-index: 9999;     /* Above all other content */
+    left: -100%;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ef621d;
+    z-index: 9999;
     pointer-events: none;
     transition: left 0.5s ease-in-out;
 }
 
-/* Covers the whole screen */
+/* Middle state: Covering the screen */
 .transition-overlay.active {
     left: 0;
 }
 
-/* Exits to the right after the content switch */
+/* Final state: Gone to the right */
 .transition-overlay.exit {
     left: 100%;
 }
-
