@@ -4,31 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>zurikamili.</title>
-    
-    <!-- This line connects your external CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    <!-- NEW: Navigation Panel -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">zurikamili.</a>
+            <ul class="nav-links">
+                <li><a href="#about">about</a></li>
+                <li><a href="#commissions">commissions</a></li>
+                <li><a href="#interests">interests</a></li>
+                <!-- Add more links if you have more sections -->
+            </ul>
+        </div>
+    </nav>
+
     <main>
-        <div class="container">
-            <h1>zurikamili.</h1>
-            <h2>a. about me</h2>
-            <p class="bio">zuri ✣ kenyan/american</p>
-            <p class="bio">i make commentary content, but im an editor and artist first</p>
-            
-            <div class="find-me">
-                <p>find me →</p>
-                <div class="links">
-                    <a href="https://x.com/zurikamili" target="_blank">twitter</a>
-                    <span class="separator">✣</span>
-                    <a href="https://www.instagram.com/zurikamili/" target="_blank">instagram</a>
-                    <span class="separator">✣</span>
-                    <a href="https://www.tiktok.com/@zurikamili.com" target="_blank">tiktok</a>
-                    <span class="separator">✣</span>
-                    <a href="https://www.youtube.com/@zurikamili" target="_blank">youtube</a>
+        <!-- Section 1: Home / About Me -->
+        <section id="home" class="section">
+            <div class="container">
+                <h1>zurikamili.</h1>
+                <h2>a. about me</h2>
+                <p class="bio">zuri ✣ kenyan/american</p>
+                <p class="bio">i make commentary content, but im an editor and artist first</p>
+                
+                <div class="find-me">
+                    <p>find me →</p>
+                    <div class="links">
+                        <a href="https://x.com/zurikamili" target="_blank">twitter</a>
+                        <span class="separator">✣</span>
+                        <a href="https://www.instagram.com/zurikamili/" target="_blank">instagram</a>
+                        <span class="separator">✣</span>
+                        <a href="https://www.tiktok.com/@zurikamili.com" target="_blank">tiktok</a>
+                        <span class="separator">✣</span>
+                        <a href="https://www.youtube.com/@zurikamili" target="_blank">youtube</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Example: Add more sections like this -->
+        <section id="commissions" class="section">
+            <div class="container">
+                <h2>commissions</h2>
+                <p>Put your commission info here...</p>
+            </div>
+        </section>
+
+        <section id="interests" class="section">
+            <div class="container">
+                <h2>interests</h2>
+                <p>Put your interests or other content here...</p>
+            </div>
+        </section>
     </main>
 </body>
 </html>
