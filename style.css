@@ -13,6 +13,15 @@ body {
     min-height: 100vh;
 }
 
+/* this would be the image */
+.portfolio-image {
+    max-width: 100%; /* Ensures the image doesn't exceed its container */
+    height: auto;    /* Maintains original aspect ratio */
+    display: block;  /* Removes unwanted spacing at the bottom */
+    margin: 20px auto; /* Centers the image with some breathing room */
+    border-radius: 8px; /* Optional: adds a soft look typical of modern portfolios */
+  }
+
 /* Fixed Header */
 .header {
     background-color: #0a0a0a;
