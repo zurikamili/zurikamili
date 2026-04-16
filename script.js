@@ -42,20 +42,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Story Reader Logic
-const chapterBtns = document.querySelectorAll('.chapter-btn');
-const chapterContents = document.querySelectorAll('.chapter-content');
+// story reader logic
+document.addEventListener('DOMContentLoaded', () => {
+    const chapterBtns = document.querySelectorAll('.chapter-btn');
+    const chapterDisplay = document.querySelector('.chapter-content'); // Target the active display div
 
-chapterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const targetChapter = btn.getAttribute('data-chapter');
+    // Load content from external JSON file
+    fetch('story.json')
+        .then(response => response.json())
+        .then(storyData => {
+            chapterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const chapterId = btn.getAttribute('data-chapter');
+                    const content = storyData[chapterId];
 
-        // Remove active class from all buttons and contents
-        chapterBtns.forEach(b => b.classList.remove('active'));
-        chapterContents.forEach(c => c.classList.remove('active'));
+                    // Remove active from all buttons and set current
+                    chapterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
 
-        // Add active class to clicked button and target content
-        btn.classList.add('active');
-        document.getElementById(targetChapter).classList.add('active');
-    });
+                    // Update the display area with the fetched text
+                    chapterDisplay.innerHTML = `
+                        <h3>${content.title}</h3>
+                        <p>${content.text}</p>
+                    `;
+                });
+            });
+
+            // Set Chapter 1 as the default view on load
+            chapterBtns[0].click();
+        })
+        .catch(error => console.error('Error loading story:', error));
 });
