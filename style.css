@@ -20,3 +20,7 @@ accent: #d8b4fe;
     padding: 40px;
     backdrop-filter: blur(10px);
 }
+
+html {
+    scroll-behavior: smooth;
+}
