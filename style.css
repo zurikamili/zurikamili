@@ -231,25 +231,26 @@ h2 {
     text-align: center;
 }
 
-/* Base state: Hidden on the left */
+/* Base state: Hidden off-screen to the left */
 .transition-overlay {
     position: fixed;
     top: 0;
-    left: -100%;
-    width: 100vw;
-    height: 100vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: #ef621d;
     z-index: 9999;
     pointer-events: none;
-    transition: left 0.5s ease-in-out;
+    transform: translateX(-100%); /* Use transform instead of left */
+    transition: transform 0.5s ease-in-out;
 }
 
-/* Middle state: Covering the screen */
+/* Wipe ON: Covers screen */
 .transition-overlay.active {
-    left: 0;
+    transform: translateX(0);
 }
 
-/* Final state: Gone to the right */
+/* Wipe OFF: Moves to the right */
 .transition-overlay.exit {
-    left: 100%;
+    transform: translateX(100%);
 }
