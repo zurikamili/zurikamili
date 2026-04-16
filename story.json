@@ -1,0 +1,14 @@
+{
+  "ch1": {
+    "title": "Chapter 1: The Beginning",
+    "text": "Your long story text for chapter one goes here..."
+  },
+  "ch2": {
+    "title": "Chapter 2: The Journey",
+    "text": "Your long story text for chapter two goes here..."
+  },
+  "ch3": {
+    "title": "Chapter 3: The Climax",
+    "text": "Your long story text for chapter three goes here..."
+  }
+}
